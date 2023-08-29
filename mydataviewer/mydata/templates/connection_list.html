@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Connection List</h2>
+<table border="1">
+<tr><th>Connection Details</th><th>Delete?</th></tr>
+{% for connection in connections %}
+    <tr> 
+    <td><a href="{% url 'connection_detail' connection.id %}">{{ connection }}</a></td><td><a href="{% url 'connection_delete' connection.id %}">Delete? </a></td>
+    </tr>
+    {% endfor %}
+</table>
+
+
+<a href="{% url 'mongodb_connection' %}">Add New Connection</a>
+{% endblock %}

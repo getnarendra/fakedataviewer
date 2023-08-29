@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Connection Detail</h2>
+<p><strong>Environment:</strong> {{ connection.environment }}</p>
+<p><strong>Host:</strong> {{ connection.host }}</p>
+<!-- Display other fields as needed -->
+<a href="{% url 'mongodb_connection' connection.id %}">Edit Connection</a>
+{% endblock %}

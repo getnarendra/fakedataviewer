@@ -1,0 +1,24 @@
+
+{% block content %}
+<div class="container">
+    <header>
+        <h1>Welcome to the Main Page</h1>
+    </header>
+    
+    <nav class="menu">
+        <ul>
+            <li><a href="/admin/">Admin</a></li>
+            <li></li><a href="{% url 'mongodb_connection' %}">Add MongoDB Connection</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="{% url 'connection_list' %}">Connection List</a></li>
+ 
+        </ul>
+    </nav>
+</div>
+<h2>Add MongoDB Connection</h2>
+<form method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit">Save</button>
+</form>
+{% endblock %}
