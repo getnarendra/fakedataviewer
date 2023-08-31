@@ -2,6 +2,11 @@ from django.shortcuts import render, get_object_or_404, redirect
 from .forms import MongoDBConnectionForm
 from .models import MongoDBConnection
 
+from django.shortcuts import render
+
+def index(request):
+  return render(request, 'index.html')
+
 def mongodb_connection(request, connection_id=None):
     connection = None
 
@@ -34,5 +39,6 @@ def connection_delete(request, connection_id):
     return render(request, 'connection_confirm_delete.html', {'connection': connection})
 
 
-def index(request):
-    return HttpResponse("Hello, world. You're at the My polls index.")
+# def index(request):
+#     # return HttpResponse("Hello, world. You're at the My polls index.")
+#       return render(request, 'index.html')
